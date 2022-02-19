@@ -1,0 +1,41 @@
+* {
+    box-sizing: inherit;
+} 
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.animation_drop-in {
+    animation: drop-in 0.3s ease-in;
+}
+
+.animation_fade-out {
+    animation: fade-out 0.3s ease-in;
+}
+
+@keyframes drop-in {
+    from {
+        opacity: 0;
+        transform: translateY(-30%);
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    } 
+    to {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+}

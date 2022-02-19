@@ -1,0 +1,128 @@
+.header {
+    height: 6.4rem;
+    position: sticky;
+    top: 0;
+    right: 0; 
+    left: 0;
+    background-color: red;
+    z-index: 9;
+}
+
+.container {
+    display: flex;
+    height: 1000px;
+    
+}
+
+.sidebar {
+    width: 96px;
+}
+
+.sidebar_item {
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar_button-circle
+{   
+    background-color: #1473e6;
+    border-radius: 50%;
+    display: flex;
+    height: 44px;
+    width: 44px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.sidebar_button-circle i {
+    transition: all 0.25s ease-in;
+}
+
+.sidebar_button-circle:not(.no-hover):hover i {
+    transform: scale(1.4);
+}
+
+.sidebar_menu-module {
+    position: absolute;
+    top: 54px;
+    left: 25px; 
+    z-index: 9999;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.sidebar_menu-module ul {
+    min-width: 200px;
+    padding: 0;
+}
+
+.sidebar_menu-module li a {
+    display: block;
+    color: #404040;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar_menu-module li a:hover {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.sidebar_menu-module li i {
+    margin: 0 10px;
+    font-size: 1.6rem;
+}
+
+.sidebar_menu-module li span {
+    font-size: 1.4rem;
+}
+
+.sidebar_button-active i {
+    transform: scale(1.4) rotate(45deg);
+}
+
+.sidebar_item-list {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar_item-list li a {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    color: #404040;
+    font-size: 1.8rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: 16px;
+    margin: 5px 0;
+}
+
+.sidebar_item-list li a:hover {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+} 
+
+.sidebar_item-active {
+    background-color: #e8ebed !important;
+    color: #1a1a1a !important;
+}
+
+.sidebar_item-list .sidebar_item-wrapper span {
+    font-size: 1.1rem;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.footer {
+
+}
