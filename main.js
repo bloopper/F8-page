@@ -6,40 +6,42 @@
     let active = false;
 
     // rotating button
-    button.onclick = function() {
+    document.onclick = function(e) {
         // add animation class when clicked 
-        if( active == false ) {
-            this.classList.add('no-hover');
-            this.classList.add('sidebar_button-active');
-            popin.innerHTML = `<div class="sidebar_menu-module animation_drop-in" >
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa-solid fa-pen"></i>
-                                            <span> Viết blog </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>`;
-            active = true;
-        } 
+        if( e.target.classList == 'sidebar_button-circle' )        
+        {   
+            if( active == false ) {
+                button.classList.add('no-hover');
+                button.classList.add('sidebar_button-active');
+                popin.innerHTML = `<div class="sidebar_menu-module animation_drop-in" >
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa-solid fa-pen"></i>
+                                                <span> Viết blog </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>`;
+                active = true;
+            };
+        }
         // remove animation class when cliked again
-        else { 
-            const sidebarMenu = $('.sidebar_menu-module')
-            this.classList.remove('no-hover');
-            this.classList.remove('sidebar_button-active');
-            sidebarMenu.classList.remove('animation_drop-in');
-            sidebarMenu.classList.add('animation_fade-out');
+        if( e.target.classList !== 'sidebar_button-circle' ) {
+            if( active == true ) {
+                const sidebarMenu = $('.sidebar_menu-module')
+                button.classList.remove('no-hover');
+                button.classList.remove('sidebar_button-active');
+                sidebarMenu.classList.remove('animation_drop-in');
+                sidebarMenu.classList.add('animation_fade-out');
 
-            setTimeout(function() {
-                sidebarMenu.remove();
-            }, 300)
+                setTimeout(function() {
+                    sidebarMenu.remove();
+                }, 300)
 
-            active = false;
-        } 
-
-        
-
+                active = false;
+            };
+        };
         // Ignor this line
         // For runtime error because i didn't provide a promise
         return Promise.resolve("Dummy response to keep the console quiet");
